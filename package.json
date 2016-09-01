@@ -1,0 +1,25 @@
+{
+  "name": "css-bootstrap-dashboard",
+  "version": "1.0.0",
+  "description": "First project for JOMC-586",
+  "main": "index.js",
+  "scripts": {
+    "test": "hi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "what"
+  },
+  "keywords": [
+    "bootstrap",
+    "css"
+  ],
+  "author": "Victor Cui",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2"
+  }
+}

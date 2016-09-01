@@ -1,0 +1,85 @@
+/* Color Variables */
+$top-header-blue: #208ee5;
+$top-header-dark-blue: #154871;
+$light-green: #33cc66;
+
+/* SASS for sprites */
+.sprite {
+    background-image: url(../images/spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-gas-tank-green {
+    width: 56px;
+    height: 51px;
+    background-position: -5px -5px;
+}
+
+.sprite-people-green {
+    width: 65px;
+    height: 44px;
+    background-position: -71px -5px;
+}
+
+.sprite-question-mark-blue {
+    width: 30px;
+    height: 42px;
+    background-position: -146px -5px;
+}
+
+.sprite-settings-gear-blue {
+    width: 41px;
+    height: 42px;
+    background-position: -71px -59px;
+}
+/* To deal with a CSS feature in which parents whose children are all floated have zero height. A.K.A the "clearfix" hack */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+/* Header */
+#top-header {
+	.container-fluid {
+		padding: 0;
+	}
+	color: #fff;
+	width: 100%;
+	ul {
+		display: inline-block;
+		li {
+			list-style-type: none;
+		}
+	}
+	.sprite {
+		display: inline-block;
+	}
+	.top-header__blue-strip {
+		background-color: $top-header-blue;
+
+	}
+	.top-header__icon-container {
+		background-color: $top-header-dark-blue;
+		min-height: 100px;
+	}
+}
+/* Content - main part of the page */
+.content {
+	padding-top: 15px;
+
+	.dashboard-bar {
+		background-color: $light-green;
+		color: #fff;
+		h2 {
+			float: left;
+			padding-left: 20px;
+		}
+	}
+}
