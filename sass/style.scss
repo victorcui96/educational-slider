@@ -1,38 +1,46 @@
 /* Color Variables */
 $top-header-blue: #208ee5;
+$thin-blue-border: #267bbf;
 $top-header-dark-blue: #154871;
 $light-green: #33cc66;
 
 /* SASS for sprites */
-.sprite {
-    background-image: url(../images/spritesheet.png);
-    background-repeat: no-repeat;
-    display: block;
+// .sprite {
+//     background-image: url(../images/spritesheet.png);
+//     background-repeat: no-repeat;
+//     display: block;
+// }
+
+// .sprite-gas-tank-green {
+//     width: 56px;
+//     height: 51px;
+//     background-position: -5px -5px;
+// }
+
+// .sprite-people-green {
+//     width: 65px;
+//     height: 44px;
+//     background-position: -71px -5px;
+// }
+
+// .sprite-question-mark-blue {
+//     width: 30px;
+//     height: 42px;
+//     background-position: -146px -5px;
+// }
+
+// .sprite-settings-gear-blue {
+//     width: 41px;
+//     height: 42px;
+//     background-position: -71px -59px;
+// }
+
+/* Important Fonts using CSS3 embed method */
+@font-face {
+	font-family: myriad;
+	src: url('fonts/myriad-pro.ttf');
 }
 
-.sprite-gas-tank-green {
-    width: 56px;
-    height: 51px;
-    background-position: -5px -5px;
-}
-
-.sprite-people-green {
-    width: 65px;
-    height: 44px;
-    background-position: -71px -5px;
-}
-
-.sprite-question-mark-blue {
-    width: 30px;
-    height: 42px;
-    background-position: -146px -5px;
-}
-
-.sprite-settings-gear-blue {
-    width: 41px;
-    height: 42px;
-    background-position: -71px -59px;
-}
 /* To deal with a CSS feature in which parents whose children are all floated have zero height. A.K.A the "clearfix" hack */
 .clearfix:after {
 	visibility: hidden;
@@ -45,6 +53,11 @@ $light-green: #33cc66;
 * html .clearfix             { zoom: 1; } /* IE6 */
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
+/* Default Styling */
+body {
+	font-family: myriad;
+}
+
 /* Header */
 #top-header {
 	.container-fluid {
@@ -53,9 +66,16 @@ $light-green: #33cc66;
 	color: #fff;
 	width: 100%;
 	ul {
-		display: inline-block;
+		display: inline-flex;
+		align-items: center;
+		padding-top: 15px; 
+		padding-bottom: 10px; 
+		margin-top: 0; 
+		margin-bottom: 0;
 		li {
+			border-right: 1px solid $thin-blue-border;
 			list-style-type: none;
+			padding: 0 10px;
 		}
 	}
 	.sprite {
@@ -63,7 +83,19 @@ $light-green: #33cc66;
 	}
 	.top-header__blue-strip {
 		background-color: $top-header-blue;
-
+		&__text {
+			font-weight: bold;
+			height: 30px;
+			padding-top: 5px;
+		}
+		&__icon {
+			padding-left: 12px;
+			padding-right: 12px;
+			img {
+				height: 30px;
+			}	
+		}
+	
 	}
 	.top-header__icon-container {
 		background-color: $top-header-dark-blue;
@@ -76,6 +108,7 @@ $light-green: #33cc66;
 
 	.dashboard-bar {
 		background-color: $light-green;
+		border-radius: 5px;
 		color: #fff;
 		h2 {
 			float: left;
