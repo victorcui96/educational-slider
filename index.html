@@ -9,15 +9,16 @@
 		<meta name="description" content="">
 		<meta name="author" content="">    <link rel="icon" href="images/favicon.ico">
 		<title>Starter Template for Bootstrap</title>
-		<!-- Bootstrap core CSS -->
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<!-- <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
 		<!-- Makes browsers render all elements more consistently and in line with modern standards. -->
 		<link rel="stylesheet" type="text/css" href="css/normalize.css">
 		<!-- Font Awesome -->
 		<script src="https://use.fontawesome.com/50aab16c9f.js"></script>
+		<!-- Bootstrap core CSS -->
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<!-- Custom styles for this template -->
 		<link href="css/style.min.css" rel="stylesheet">
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -104,10 +105,9 @@
 									</li>
 									<li>
 										<img src="images/number-three-green.png" class="dashboard-container__tasks__list__number">
-										<span>Review Activity</span><span class="dashboard-container__tasks__list__people"><img src="images/small-person-blue.png" alt="small blue person icon"><span>36</span></span>
 									</li>
 									<li>
-										<img src="images/number-four-green.png" class="dashboard-container__tasks__list__number">
+										<img src="images/number-four-green.png" class="dashboard-container__tasks__list__number">										<span>Review Activity</span><span class="dashboard-container__tasks__list__people"><img src="images/small-person-blue.png" alt="small blue person icon"><span>36</span></span>
 										<span>Reach out</span><span class="dashboard-container__tasks__list__people"><img src="images/small-person-blue.png" alt="small blue person icon"><span>3</span></span>
 									</li>
 								</ul>
@@ -115,20 +115,44 @@
 						</div>
 						<div class="col-md-8 col-xs-12">
 							<div class="dashboard-container__analytics">
-								<h3 class="blue-text">Analytics</h3>
-								<div class="dashboard-container__analytics__activity">
-									<h4>Activity</h4>
-									<div class="dropdown">
-										<span class="date">06/28/11 -07/21/11</span>
-										<span class="vertical-bar">|</span>
-										<i class="fa fa-angle-down fa-lg dropdown-toggle" aria-hidden="true" data-toggle="dropdown"></i>
-										<ul class="dropdown-menu">
-											<li><a href="#">Link 1</a></li>
-											<li><a href="#">Link 2</a></li>
-											<li><a href="#">Link 3</a></li>
-										</ul>
+								<div class="row">
+									<div class="col-md-9">
+										<h3 class="blue-text">Analytics</h3>
+										<div class="dashboard-container__analytics__activity">
+											<h4>Activity</h4>
+											<div class="dropdown">
+												<span class="date">06/28/11 -07/21/11</span>
+												<span class="vertical-bar">|</span>
+												<i class="fa fa-angle-down fa-lg dropdown-toggle" aria-hidden="true" data-toggle="dropdown"></i>
+												<ul class="dropdown-menu">
+													<li><a href="#">Link 1</a></li>
+													<li><a href="#">Link 2</a></li>
+													<li><a href="#">Link 3</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="dashboard-container__analytics__bar-graph">
+											<img src="images/analytics-bar-graph.png" alt="analytics bar graph" class="img-responsive">
+										</div>
 									</div>
-									<!-- <input type="text" class="form-contol" value="06/28/11 -07/21/11"> -->
+									<div class="col-md-3">
+										<div class="dashboard-container__analytics__pie-chart">
+											<img src="images/analytics-pie-chart.png" alt="analytics pie chart" class="img-responsive">
+										</div>
+									</div>
+								</div>
+								<div class="dashboard-container__analytics__social-media">
+									<div class="checkbox">
+									<label>
+											<input type="checkbox" value="checked">
+											<button class="dashboard-container__analytics__social-media__button">Facebook</button>
+										</div>
+									</label>
+										
+									<button class="dashboard-container__analytics__social-media__button">Twitter</button>
+									<br>
+									<button class="dashboard-container__analytics__social-media__button">Foursquare</button>
+									<button class="dashboard-container__analytics__social-media__button">Google+</button>
 								</div>
 							</div>
 						</div>

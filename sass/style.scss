@@ -345,6 +345,32 @@ ul {
                     }
                 }
             }
+
+            /* Analytics Bar Graph */
+            &__bar-graph {
+                padding: 20px 15px 20px 15px;
+
+                img {
+                    height: 160px;
+                }
+            }
+
+            /* Analytics Pie Chart */
+            &__pie-chart {
+                padding: 20px 15px 20px 15px;
+
+                img {
+                    margin: 0px auto;
+                    width: 60%;
+                }
+            }
+
+            /* Social Media Buttons */
+            &__social-media {
+                .checkbox {
+                    display: inline;
+                }
+            }
         }
     }
 }
