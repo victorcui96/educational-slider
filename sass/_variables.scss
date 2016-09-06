@@ -1,0 +1,33 @@
+/* Color Variables */
+$top-header-blue: #208ee5;
+$thin-blue-border: #267bbf;
+$headline-blue: #2498f4;
+$top-header-dark-blue: #144f80;
+$light-green: #33cc66;
+$light-green-number-icon: #32cc66;
+$orange: #fe9247;
+$gray: #cccccc;
+$dark-gray-text: #a0a0a0;
+
+//Screen size Presets - extremely helpful in responsive design
+$screen-xs-min: 480px;
+
+/* Smartphones */
+$screen-lg-min: 1200px;
+
+/* Laptops */
+
+/*********************
+Embedding fonts - Learn how to embed your custom fonts here: http://www.w3schools.com/css/css3_fonts.asp
+*********************/
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url("../fonts/myriad-pro.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*********************
+TYPOGRAPHY Variables
+*********************/
+$myriad-pro: "Myriad Pro", Arial, sans-serif;

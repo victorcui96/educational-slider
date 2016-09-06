@@ -1,0 +1,22 @@
+/******************************************************************
+Stylesheet: Mixins & Constants Stylesheet
+
+This is where you can take advantage of Sass' great features:
+Mixins & Constants. Helps speed up simple changes like
+changing a color or adding CSS3 techniques gradients.
+******************************************************************/
+
+@mixin breakpoint($point) {
+    /* In real production I would probably use min-width */
+    @if $point == $screen-xs-min {
+        @media screen and (min-width: $screen-xs-min) {
+            @content;
+        }
+    }
+}
+
+/* Hover effect mixin */
+@mixin hover-effect($color) {
+    color: $color;
+    transition: 0.5s ease-out;
+}

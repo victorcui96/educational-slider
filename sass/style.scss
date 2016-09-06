@@ -1,118 +1,350 @@
-/* Color Variables */
-$top-header-blue: #208ee5;
-$thin-blue-border: #267bbf;
-$top-header-dark-blue: #154871;
-$light-green: #33cc66;
+/* Import sass helper files */
+
+//import _variables.scss file
+@import "variables";
+
+//import _mixins.scss file
+@import "mixins";
 
 /* SASS for sprites */
+
 // .sprite {
 //     background-image: url(../images/spritesheet.png);
 //     background-repeat: no-repeat;
 //     display: block;
 // }
-
 // .sprite-gas-tank-green {
 //     width: 56px;
 //     height: 51px;
 //     background-position: -5px -5px;
 // }
-
 // .sprite-people-green {
 //     width: 65px;
 //     height: 44px;
 //     background-position: -71px -5px;
 // }
-
 // .sprite-question-mark-blue {
 //     width: 30px;
 //     height: 42px;
 //     background-position: -146px -5px;
 // }
-
 // .sprite-settings-gear-blue {
 //     width: 41px;
 //     height: 42px;
 //     background-position: -71px -59px;
 // }
 
-/* Important Fonts using CSS3 embed method */
-@font-face {
-	font-family: myriad;
-	src: url('fonts/myriad-pro.ttf');
+/* Resets */
+body {
+    font-size: 16px;
+    overflow-x: hidden;
 }
 
+// .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+//     float: none;
+// }
+
 /* To deal with a CSS feature in which parents whose children are all floated have zero height. A.K.A the "clearfix" hack */
+
 .clearfix:after {
-	visibility: hidden;
-	display: block;
-	font-size: 0;
-	content: " ";
-	clear: both;
-	height: 0;
-	}
-* html .clearfix             { zoom: 1; } /* IE6 */
-*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+* html .clearfix {
+    zoom: 1;
+}
+
+/* IE6 */
+
+*:first-child + html .clearfix {
+    zoom: 1;
+}
+
+/* IE7 */
 
 /* Default Styling */
+
 body {
-	font-family: myriad;
+    font-family: $myriad-pro;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Helper Classes */
+.blue-text {
+    color: $headline-blue;
 }
 
 /* Header */
-#top-header {
-	.container-fluid {
-		padding: 0;
-	}
-	color: #fff;
-	width: 100%;
-	ul {
-		display: inline-flex;
-		align-items: center;
-		padding-top: 15px; 
-		padding-bottom: 10px; 
-		margin-top: 0; 
-		margin-bottom: 0;
-		li {
-			border-right: 1px solid $thin-blue-border;
-			list-style-type: none;
-			padding: 0 10px;
-		}
-	}
-	.sprite {
-		display: inline-block;
-	}
-	.top-header__blue-strip {
-		background-color: $top-header-blue;
-		&__text {
-			font-weight: bold;
-			height: 30px;
-			padding-top: 5px;
-		}
-		&__icon {
-			padding-left: 12px;
-			padding-right: 12px;
-			img {
-				height: 30px;
-			}	
-		}
-	
-	}
-	.top-header__icon-container {
-		background-color: $top-header-dark-blue;
-		min-height: 100px;
-	}
-}
-/* Content - main part of the page */
-.content {
-	padding-top: 15px;
 
-	.dashboard-bar {
-		background-color: $light-green;
-		border-radius: 5px;
-		color: #fff;
-		h2 {
-			float: left;
-			padding-left: 20px;
-		}
-	}
+#top-header {
+    .container-fluid {
+        padding: 0;
+    }
+
+    color: #fff;
+    width: 100%;
+
+    ul {
+        align-items: center;
+        display: inline-flex;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        li {
+            border-right: 1px solid $thin-blue-border;
+            list-style-type: none;
+            padding: 0 10px;
+        }
+    }
+
+    .top-header--light-blue-strip {
+        background-color: $top-header-blue;
+
+        &__text {
+            font-weight: bold;
+            height: 30px;
+            padding-top: 5px;
+        }
+
+        &__icon {
+            padding-left: 12px;
+            padding-right: 12px;
+
+            img {
+                height: 30px;
+            }
+        }
+    }
+
+    .top-header--dashed-blue-strip {
+        /* Creates alternating dashes on a blue background. Idea for this came from https://css-tricks.com/stripes-css/ */
+        background: repeating-linear-gradient(-55deg, #174972, #134670 10px, #174972 10px, #134670 20px);
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        &__icon-container {
+            img {
+                padding: 0 10px;
+            }
+        }
+    }
+
+    .top-header--dark-blue-strip {
+        background-color: $top-header-dark-blue;
+        min-height: 100px;
+    }
+}
+
+/* Content - main part of the page */
+
+.content {
+    padding-top: 15px;
+
+    .dashboard-bar {
+        background-color: $light-green;
+        border-radius: 5px;
+        color: #fff;
+        display: block;
+
+        @include breakpoint($screen-lg-min) {
+            display: flex;
+            align-items: center;
+        }
+
+
+        h2 {
+            text-align: center;
+
+            @include breakpoint($screen-lg-min) {
+                float: left;
+                padding-left: 20px;
+            }
+        }
+
+        form {
+            border: none;
+            display: block;
+            margin: 0 auto;
+            padding-bottom: 20px;
+            width: 200px;
+
+            @include breakpoint($screen-lg-min) {
+                margin-left: auto;
+                margin-right: 40px;
+            }
+
+
+            input {
+                border-radius: 3px;
+
+                @include breakpoint($screen-lg-min) {
+                    left: 25px;
+                    position: relative;
+                    width: 230px;
+                }
+            }
+        }
+    }
+
+    .dashboard-container {
+        border: 1.5px solid #eeeeee;
+        box-shadow: -1px 4px 10px 1px rgba(0, 0, 0, 0.4);
+
+        /* An awesome new property in CSS3. Credit goes to https://css-tricks.com/almanac/properties/b/box-shadow/ for teaching me how to use the property, and what the different parameters mean */
+        margin-top: 20px;
+
+        &__announcements-row {
+            border-bottom: 1.5px solid #eeeeee;
+
+            &__headline {
+                color: $orange;
+                text-transform: uppercase;
+                text-align: center;
+                border-bottom: 1.5px solid #eeeeee;
+                padding: 20px 0;
+            }
+
+            &__description {
+                text-align: center;
+                padding: 0 10px;
+
+                a {
+                    transition: 0.5s ease-out;
+
+                    &:hover {
+                        filter: grayscale(1);
+                    }
+                }
+            }
+
+            &__navigation-button {
+                height: 30px;
+            }
+        }
+
+        /* Tasks Container */
+        &__tasks {
+            color: $headline-blue;
+
+            /* Tasks section */
+            &__headline {
+                text-align: center;
+
+                &__settings-icon {
+                    height: 30px;
+                }
+            }
+
+            &__list {
+                li > * {
+                    transition: 0.5s ease-out;
+                }
+
+                li {
+                    border-right: 1.5px solid #eeeeee;
+                    border-bottom: 1.5px solid #eeeeee;
+                    padding: 20px 0;
+
+                    &:hover {
+                        img {
+                            filter: grayscale(1);
+                            transition: 0.5s ease-out;
+                        }
+
+                        span {
+                            color: $gray;
+                            transition: 0.5s ease-out;
+
+                            span {
+                                transition: 0.5s ease-out;
+                            }
+                        }
+                    }
+                }
+
+                &__number {
+                    display: inline-block;
+                    height: 40px;
+                    margin-left: 10px;
+                    margin-right: 15px;
+                    width: 40px;
+                }
+
+                &__people {
+                    border: 1.5px solid #eeeeee;
+                    float: right;
+                    padding: 5px 10px 2px 10px;
+                    margin-right: 10px;
+                    min-width: 66px;
+
+                    span {
+                        padding-left: 8px;
+                    }
+                }
+            }
+        }
+
+        /* Analytics section */
+        &__analytics {
+            h3 {
+                text-align: center;
+            }
+
+            &__activity {
+                color: $dark-gray-text;
+                text-align: center;
+
+                h3 {
+                    margin-bottom: 20px;
+                }
+
+                .dropdown {
+                    border: 1.5px solid #ddd;
+                    border-radius: 3px;
+                    color: #666;
+                    text-align: center;
+                    margin: 0 auto;
+                    width: 60%;
+
+                    .date {
+                        display: inline-block;
+                        height: 24px;
+                        padding-top: 10px;
+                        margin-bottom: 12px;
+                    }
+
+                    .vertical-bar {
+                        height: 28px;
+                        display: inline-block;
+                    }
+
+                    .dropdown-toggle {
+                        color: #fe7f13;
+                        transition: 0.5s ease-out;
+
+                        /* why isn't this working */
+
+                        // &:hover {
+                        //     color: $gray;
+                        // }
+                   
+                    }
+                }
+            }
+        }
+    }
 }
