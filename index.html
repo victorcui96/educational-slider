@@ -8,7 +8,7 @@
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<meta name="description" content="">
 		<meta name="author" content="">    <link rel="icon" href="images/favicon.ico">
-		<title>Starter Template for Bootstrap</title>
+		<title>Application Dashboard</title>
 		
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<!-- <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
@@ -105,9 +105,10 @@
 									</li>
 									<li>
 										<img src="images/number-three-green.png" class="dashboard-container__tasks__list__number">
+										<span>Review Activity</span><span class="dashboard-container__tasks__list__people"><img src="images/small-person-blue.png" alt="small blue person icon"><span>36</span></span>
 									</li>
 									<li>
-										<img src="images/number-four-green.png" class="dashboard-container__tasks__list__number">										<span>Review Activity</span><span class="dashboard-container__tasks__list__people"><img src="images/small-person-blue.png" alt="small blue person icon"><span>36</span></span>
+										<img src="images/number-four-green.png" class="dashboard-container__tasks__list__number">
 										<span>Reach out</span><span class="dashboard-container__tasks__list__people"><img src="images/small-person-blue.png" alt="small blue person icon"><span>3</span></span>
 									</li>
 								</ul>
@@ -142,32 +143,87 @@
 									</div>
 								</div>
 								<div class="dashboard-container__analytics__social-media">
-									<div class="checkbox">
 									<label>
-											<input type="checkbox" value="checked">
-											<button class="dashboard-container__analytics__social-media__button">Facebook</button>
-										</div>
+										<input class="checkbox" type="checkbox" checked>
+										<button class="dashboard-container__analytics__social-media__button" id="facebook-button">Facebook</button>
 									</label>
-										
-									<button class="dashboard-container__analytics__social-media__button">Twitter</button>
+									<label>
+										<input type="checkbox" class="checkbox" checked>
+										<button class="dashboard-container__analytics__social-media__button" id="twitter-button">Twitter</button>
+									</label>
 									<br>
-									<button class="dashboard-container__analytics__social-media__button">Foursquare</button>
-									<button class="dashboard-container__analytics__social-media__button">Google+</button>
+									<label for="">
+										<input type="checkbox" class="checkbox">
+										<button class="dashboard-container__analytics__social-media__button" id="foursquare-button">Foursquare</button>
+									</label>
+									<label for="">
+										<input type="checkbox" class="checkbox">
+										<button class="dashboard-container__analytics__social-media__button" id="google-button">Google+</button>
+									</label>
 								</div>
 							</div>
-						</div>
+						</div> <!-- End Tasks and Analytics row -->
+					</div>
+						<!-- Recommendations and Customer images row -->
+						<div class="row">
+							<div class="col-md-4 col-xs-12">
+								<div class="dashboard-container__recommendations">
+									<h3 class="blue-text">Recommendations</h3>
+									<ul class="dashboard-container__recommendations__list">
+										<li>
+											<div class="dashboard-container__recommendations__list__image-and-text">
+												<img src="images/clipboard-green.png" alt="green clipboard" class="">
+												<p class="small-text">Article</p>
+												<p>7 Steps to getting more Fans</p>
+											</div>
+										</li>
+										<li>
+											<div class="dashboard-container__recommendations__list__image-and-text">
+												<img src="images/clipboard-green.png" alt="green clipboard" class="">
+												<p class="small-text">Article</p>
+												<p>Increase traction with more interactions</p>
+											</div>
+										</li>
+										<li>
+											<div class="dashboard-container__recommendations__list__image-and-text">
+												<img src="images/checkmark-green.png" alt="green checkbox" class="">
+												<p class="small-text">Checklist</p>
+												<p>Creating a Promotion</p>
+											</div>
+										</li>
+										<li>
+											<div class="dashboard-container__recommendations__list__image-and-text">
+												<img src="images/lightbulb-green.png" alt="green lightbulb" class="">
+												<p class="small-text">Tip</p>
+												<p>Share More</p>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-8 col-xs-12">
+								<div class="dashboard-container__customers">
+									<div class="dashboard-container__customers__images">
+										<img src="images/contacts.png" alt="contacts image" class="img-responsive">
+										<img src="images/customers.png" alt="customers image" class="img-responsive">
+										
+									</div>
+									<div class="dashboard-container__customers__advertisement-text">
+										<p><span>Did you know?</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod.</p>
+									</div>
+								</div>
+							</div>
+						</div> <!-- End Recommandations and Customer images row -->
 					</div>
 				</div>
-			</div>
-		</div>
-		
-		<!-- Bootstrap core JavaScript
-		================================================== -->
-		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-		<!-- <script src="js/ie10-viewport-bug-workaround.js"></script> -->
-	</body>
-</html>
+				
+				<!-- Bootstrap core JavaScript
+				================================================== -->
+				<!-- Placed at the end of the document so the pages load faster -->
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+				<!-- Latest compiled and minified JavaScript -->
+				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+				<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+				<!-- <script src="js/ie10-viewport-bug-workaround.js"></script> -->
+			</body>
+		</html>
