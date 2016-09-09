@@ -192,6 +192,9 @@ button {
         padding-bottom: 20px;
 
         &__icon-container {
+            margin: 0 auto;
+            width: 85%;
+
             img {
                 padding: 0 10px;
             }
@@ -524,11 +527,45 @@ button {
         p {
             margin: 0 auto;
             padding: 25px 20px;
+            padding-bottom: 15px;
 
             span {
                 display: block;
                 text-transform: uppercase;
             }
         }
+    }
+
+    &__icons {
+        display: flex;
+        justify-content: center;
+
+        img {
+            padding: 0 20px;
+        }
+    }
+}
+
+/* CTA Images Section (the three images right above footer) */
+.dashboard-container__cta-images {
+    overflow: hidden;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 30px;
+    margin-top: 15px;
+
+    .col-md-4 {
+        background-color: $headline-blue;
+    }
+}
+
+#footer {
+    background-color: $footer-white;
+    width: 100%;
+
+    .gray-strip {
+        background: linear-gradient(#f8f8f8, #e9e9e9);
+        min-height: 30px;
+        width: 100%;
     }
 }
