@@ -245,12 +245,19 @@ button {
 
             input {
                 border-radius: 3px;
+                position: relative;
 
                 @include breakpoint($screen-lg-min) {
                     left: 25px;
-                    position: relative;
                     width: 230px;
                 }
+            }
+
+            img {
+                float: right;
+                position: relative;
+                bottom: 30px;
+                right: 10px;
             }
         }
     }
@@ -512,6 +519,7 @@ button {
     &__advertisement-text {
         background-color: $headline-blue;
         color: #fff;
+        position: relative;
 
         p {
             margin: 0 auto;
