@@ -35,9 +35,12 @@
 // }
 
 /* Resets */
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     font-size: 16px;
-    overflow-x: hidden;
 }
 
 // .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
@@ -84,6 +87,10 @@ button {
     border: none;
     border-radius: 6px;
     padding-right: 15px;
+}
+
+p {
+    margin-bottom: 0;
 }
 
 /*Different Color checkbox hack */
@@ -139,13 +146,13 @@ button {
     color: $headline-blue;
 }
 
+.container-fluid {
+    padding: 0;
+}
+
 /* Header */
 
 #top-header {
-    .container-fluid {
-        padding: 0;
-    }
-
     color: #fff;
     width: 100%;
 
@@ -166,6 +173,10 @@ button {
 
     .top-header--light-blue-strip {
         background-color: $top-header-blue;
+
+        .col-md-4 {
+            float: right;
+        }
 
         &__text {
             font-weight: bold;
@@ -195,15 +206,54 @@ button {
             margin: 0 auto;
             width: 85%;
 
+            @media screen and (min-width: 375px) {
+                width: 72%;
+            }
+
+            @media screen and (min-width: 425px) {
+                width: 63%;
+            }
+
+            @include breakpoint($screen-lg-min) {
+                // background: url(../images/circle-shadows.png);
+                // background-position: center center;
+                // background-repeat: no-repeat;
+                position: relative;
+                top: 22px;
+                width: auto;
+            }
+
+
             img {
-                padding: 0 10px;
+                background: url(images/Icon--shadow.png);
+                background-position: center bottom;
+                background-size: cover;
+                background-repeat: no-repeat;
+                padding: 2px 10px;
+                transition: 0.5s ease-out;
+
+                &:hover {
+                    filter: hue-rotate(80deg);
+                    -webkit-filter: hue-rotate(80deg);
+                    -moz-filter: hue-rotate(80deg);
+                    -o-filter: hue-rotate(80deg);
+                    -ms-filter: hue-rotate(80deg);
+                }
             }
         }
     }
 
     .top-header--dark-blue-strip {
-        background-color: $top-header-dark-blue;
-        min-height: 100px;
+        display: none;
+
+        @include breakpoint($screen-lg-min) {
+            background: url(../images/circle-shadows.png);
+            background-position: center 10px;
+            background-repeat: no-repeat;
+            background-color: $top-header-dark-blue;
+            display: block;
+            min-height: 40px;
+        }
     }
 }
 
@@ -238,6 +288,7 @@ button {
             display: block;
             margin: 0 auto;
             padding-bottom: 20px;
+            position: relative;
             width: 200px;
 
             @include breakpoint($screen-lg-min) {
@@ -248,10 +299,12 @@ button {
 
             input {
                 border-radius: 3px;
-                position: relative;
 
                 @include breakpoint($screen-lg-min) {
-                    left: 25px;
+                    float: right;
+                    position: absolute;
+                    left: 0;
+                    top: 10px;
                     width: 230px;
                 }
             }
@@ -259,21 +312,47 @@ button {
             img {
                 float: right;
                 position: relative;
-                bottom: 30px;
+                top: -30px;
                 right: 10px;
+
+                @include breakpoint($screen-lg-min) {
+                    left: 24px;
+                    top: 13px;
+                }
             }
         }
     }
 
+    .dashboard-container > * {
+        background-color: #fff;
+    }
+
     .dashboard-container {
-        border: 1.5px solid #eeeeee;
-        box-shadow: -1px 4px 10px 1px rgba(0, 0, 0, 0.4);
+        border: 1px solid #f5f5f5;
+
+        // box-shadow: -1px 4px 10px 1px rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+        background: linear-gradient(#f7f7f7, #fff);
 
         /* An awesome new property in CSS3. Credit goes to https://css-tricks.com/almanac/properties/b/box-shadow/ for teaching me how to use the property, and what the different parameters mean */
         margin-top: 20px;
+        padding-top: 15px;
+
+        /* To show the grey background */
+        .row {
+            margin: 0 auto;
+
+            /* Remove extra horizontal padding on mobile */
+            [class*="col"] {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
 
         &__announcements-row {
             border-bottom: 1.5px solid #eeeeee;
+
+            // background: #fff;
 
             &__headline {
                 color: $orange;
@@ -281,11 +360,29 @@ button {
                 text-align: center;
                 border-bottom: 1.5px solid #eeeeee;
                 padding: 20px 0;
+
+                @include breakpoint($screen-lg-min) {
+                    border-right: 1.5px solid #eee;
+                    margin-top: 0;
+                }
             }
 
             &__description {
                 text-align: center;
                 padding: 0 10px;
+                padding-bottom: 10px;
+
+                p {
+                    color: #a8a8a8;
+                    padding-left: 10px;
+                    padding-right: 10px;
+
+                    @include breakpoint($screen-lg-min) {
+                        text-align: left;
+                        font-size: 0.9em;
+                        padding-top: 20px;
+                    }
+                }
 
                 a {
                     transition: 0.5s ease-out;
@@ -294,6 +391,25 @@ button {
                         filter: grayscale(1);
                     }
                 }
+            }
+
+            .col-md-1 {
+                text-align: center;
+
+                @include breakpoint($screen-lg-min) {
+                    padding-top: 15px;
+                }
+
+
+                a {
+                    transition: 0.5s ease-out;
+
+                    &:hover {
+                        filter: grayscale(1);
+                    }
+                }
+
+                padding-top: 10px;
             }
 
             &__navigation-button {
@@ -308,8 +424,25 @@ button {
             &__headline {
                 text-align: center;
 
+                @include breakpoint($screen-lg-min) {
+                    text-align: left;
+                    padding-top: 15px;
+                }
+
+
+                h3 {
+                    @include breakpoint($screen-lg-min) {
+                        display: inline;
+                        padding-left: 25px;
+                    }
+                }
+
                 &__settings-icon {
                     height: 30px;
+
+                    @include breakpoint($screen-lg-min) {
+                        float: right;
+                    }
                 }
             }
 
@@ -319,6 +452,10 @@ button {
                 }
 
                 li {
+                    &:first-child {
+                        padding-top: 35px;
+                    }
+
                     border-right: 1.5px solid #eeeeee;
                     border-bottom: 1.5px solid #eeeeee;
                     padding: 20px 0;
@@ -364,16 +501,62 @@ button {
 
         /* Analytics section */
         &__analytics {
+            .row {
+                position: relative;
+            }
+
+            #twitter-popup {
+                position: absolute;
+                bottom: 95px;
+                left: 90px;
+
+                @include breakpoint($screen-lg-min) {
+                    position: relative;
+                    float: right;
+                    top: -130px;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+
+            @include breakpoint($screen-lg-min) {
+                padding-top: 20px;
+            }
+
+
             h3 {
                 text-align: center;
+
+                @include breakpoint($screen-lg-min) {
+                    display: inline-block;
+                    text-align: left;
+                    padding-left: 35px;
+                    padding-bottom: 20px;
+                    margin-top: 0;
+                }
             }
 
             &__activity {
                 color: $dark-gray-text;
                 text-align: center;
 
+                @include breakpoint($screen-lg-min) {
+                    text-align: left;
+                }
+
+
                 h3 {
                     margin-bottom: 20px;
+                }
+
+                h4 {
+                    font-size: 0.9em;
+                    text-transform: uppercase;
+
+                    @include breakpoint($screen-lg-min) {
+                        display: inline;
+                        padding-left: 45px;
+                    }
                 }
 
                 .dropdown {
@@ -383,6 +566,12 @@ button {
                     text-align: center;
                     margin: 0 auto;
                     width: 60%;
+
+                    @include breakpoint($screen-lg-min) {
+                        float: right;
+                        width: 200px;
+                    }
+
 
                     .date {
                         display: inline-block;
@@ -412,10 +601,19 @@ button {
 
             /* Analytics Bar Graph */
             &__bar-graph {
-                padding: 20px 15px 20px 15px;
+                padding: 20px 0 20px 0;
+
+                @include breakpoint($screen-lg-min) {
+                    padding-left: 30px;
+                }
+
 
                 img {
-                    height: 160px;
+                    height: 200px;
+
+                    @include breakpoint($screen-lg-min) {
+                        height: 260px;
+                    }
                 }
             }
 
@@ -423,16 +621,59 @@ button {
             &__pie-chart {
                 padding: 20px 15px 20px 15px;
 
+                @include breakpoint($screen-lg-min) {
+                    padding-bottom: 0;
+                }
+
+
                 img {
                     margin: 0px auto;
                     width: 60%;
+
+                    @include breakpoint($screen-lg-min) {
+                        height: 285x;
+                        width: auto;
+                        padding-bottom: 0;
+                    }
                 }
             }
 
             /* Social Media Buttons */
+            .social-media-container {
+                text-align: center;
+            }
+
             &__social-media {
+                @include breakpoint($screen-lg-min) {
+                    br {
+                        display: none;
+                    }
+
+                    display: inline;
+                }
+
+
                 width: 250px;
                 margin: 0 auto;
+
+                input[type="checkbox"] {
+                    display: none;
+                }
+
+                input[type="checkbox"] + label span {
+                    display: inline-block;
+                    width: 18px;
+                    height: 18px;
+                    background: url(../images/box-shadow-checkbox.png) left top no-repeat;
+                    vertical-align: middle;
+                    cursor: pointer;
+                }
+
+                input[type="checkbox"]:checked + label span {
+                    width: 24px;
+                    height: 28px;
+                    background: url(../images/orange-checkmark.png) left top no-repeat;
+                }
 
                 .checkbox {
                     height: 30px;
@@ -448,6 +689,7 @@ button {
 
                 &__button {
                     margin-bottom: 10px;
+                    padding-bottom: 0;
                 }
 
                 #facebook-button {
@@ -514,13 +756,30 @@ button {
     &__images {
         padding: 30px 0;
 
+        @include breakpoint($screen-lg-min) {
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            justify-content: center;
+        }
+
+
         img {
             margin: 0 auto;
+
+            @include breakpoint($screen-lg-min) {
+                display: inline-block;
+                margin-left: 0;
+                margin-right: 0;
+                padding: 0 20px;
+            }
         }
     }
 
     &__advertisement-text {
-        background-color: $headline-blue;
+        background-color: $headline-blue !important;
         color: #fff;
         position: relative;
 
@@ -528,6 +787,12 @@ button {
             margin: 0 auto;
             padding: 25px 20px;
             padding-bottom: 15px;
+
+            @include breakpoint($screen-lg-min) {
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+
 
             span {
                 display: block;
@@ -539,20 +804,80 @@ button {
     &__icons {
         display: flex;
         justify-content: center;
+        padding-bottom: 10px;
+
+        i {
+            color: #ff9b13;
+            padding: 0 15px;
+            transition: 0.5s ease-out;
+
+            &:hover {
+                color: $gray;
+            }
+
+            @include breakpoint($screen-lg-min) {
+                display: none;
+            }
+        }
+
+        .back-button {
+            left: -26px;
+        }
+
+        .next-button {
+            right: -26px;
+        }
 
         img {
+            display: none;
+            transition: 0.5s ease-out;
+
+            &:hover {
+                filter: grayscale(1);
+            }
+
+            @include breakpoint($screen-lg-min) {
+                display: inline-block;
+                position: absolute;
+                top: 25%;
+            }
+
+
             padding: 0 20px;
+            transition: 0.5s ease-out;
         }
     }
 }
 
 /* CTA Images Section (the three images right above footer) */
 .dashboard-container__cta-images {
+    border-radius: 18px;
     overflow: hidden;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 30px;
-    margin-top: 15px;
+    padding: 15px 0;
+
+    // #see-what-others {
+    //     display: flex;
+
+    //     button {
+    //         background-color: #33cc66;
+    //     }
+    // }
+
+    // padding-left: 15px;
+    // padding-right: 15px;
+    // padding-bottom: 30px;
+    // margin-top: 15px;
+    img {
+        margin: 0 auto;
+
+        &:nth-child(1) {
+            padding-top: 10px;
+        }
+
+        &:last-child {
+            padding-bottom: 10px;
+        }
+    }
 
     .col-md-4 {
         background-color: $headline-blue;
@@ -565,7 +890,97 @@ button {
 
     .gray-strip {
         background: linear-gradient(#f8f8f8, #e9e9e9);
-        min-height: 30px;
+        min-height: 20px;
         width: 100%;
+    }
+
+    .container-fluid {
+        background-color: #f5f5f5;
+        color: #c6c6c6;
+
+        .site-links {
+            border-right: 1px solid #dddddd;
+            border-bottom: 1px solid #dddddd;
+
+            @include breakpoint($screen-lg-min) {
+                border-bottom: none;
+                border-right: none;
+            }
+
+
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+
+            a {
+                border-right: 1px solid #dddddd;
+                color: #c6c6c6;
+                padding: 0 20px;
+                width: 33%;
+
+                &:first-child {
+                    padding-left: 30px;
+                }
+            }
+        }
+
+        .promotion {
+            border-bottom: 1px solid #dddddd;
+            text-align: center;
+
+            p {
+                padding: 10px 0;
+
+                span {
+                    font-weight: bold;
+                    color: #4baaf3;
+                }
+
+                i {
+                    color: #4baaf3;
+                    font-weight: bold;
+                    position: relative;
+                    top: 5px;
+                    left: 20px;
+                }
+            }
+        }
+
+        .logout-social {
+            > * {
+                border-right: 1px solid #ddd;
+            }
+
+            .logout {
+                border-right: 1px solid #ddd;
+                color: #4baaf3;
+                font-weight: bold;
+                text-align: center;
+
+                @include breakpoint($screen-lg-min) {
+                    display: flex;
+                    padding-top: 10px;
+                    align-items: center;
+                }
+            }
+
+            .social-icons {
+                border-right: 1px solid #ddd;
+                text-align: center;
+                position: relative;
+                top: 5px;
+
+                img {
+                    height: 22px;
+                }
+            }
+        }
+    }
+}
+
+#no-horizontal-padding {
+    @include breakpoint($screen-lg-min) {
+        padding-left: 0;
+        padding-right: 0;
     }
 }

@@ -6,10 +6,19 @@ Mixins & Constants. Helps speed up simple changes like
 changing a color or adding CSS3 techniques gradients.
 ******************************************************************/
 
+$screen-xs-min: 480px;
+
+/* Laptops */
+$screen-lg-min: 1200px;
+
 @mixin breakpoint($point) {
-    /* In real production I would probably use min-width */
     @if $point == $screen-xs-min {
         @media screen and (min-width: $screen-xs-min) {
+            @content;
+        }
+    }
+    @else if $point == $screen-lg-min {
+        @media screen and (min-width: $screen-lg-min) {
             @content;
         }
     }
