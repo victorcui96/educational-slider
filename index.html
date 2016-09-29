@@ -1,6 +1,7 @@
 <!-- The main HTML file. The HTML uses BEM syntax, which is a standardized way of naming HTML classes. Read about Bem syntax at http://cssguidelin.es/#bem-like-naming -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +20,9 @@
     <!-- Bootstrap core CSS -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Unslider's CSS -->
+    <link rel="stylesheet" type="text/css" href="unslider/dist/css/unslider.css">
+    <link rel="stylesheet" type="text/css" href="unslider/dist/css/unslider-dots.css">
     <!-- Custom styles for this template -->
     <link href="css/style.min.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -29,14 +33,33 @@
 </head>
 
 <body>
-        <!-- Bootstrap core JavaScript
-                ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <!-- <script src="js/ie10-viewport-bug-workaround.js"></script> -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="my-slider" dir="rtl">
+                    <ul>
+                        
+                          
+                        <li data-nav="nav-title">My Slide</li>
+                        <li data-nav="nav-title">Slide 2</li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Add swipe support for mobile and desktop to your sliders. -->
+    <script src="//stephband.info/jquery.event.move/js/jquery.event.move.js"></script>
+    <script src="//stephband.info/jquery.event.swipe/js/jquery.event.swipe.js"></script>
+    <!-- Unslider JS -->
+    <script src="unslider/dist/js/unslider-min.js"></script>
+    <script src="js/script.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- <script src="js/ie10-viewport-bug-workaround.js"></script> -->
 </body>
 
 </html>

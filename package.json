@@ -1,0 +1,37 @@
+{
+  "name": "educational-slider",
+  "version": "1.0.0",
+  "description": "Educational JQuery slider, 2nd project of JOMC-586 (Fall 2016)",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "livereload": "^0.5.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2"
+  },
+  "scripts": {
+    "test": "hi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorcui96/educational-slider.git"
+  },
+  "keywords": [
+    "JQuery",
+    "interactive",
+    "design"
+  ],
+  "author": "Victor Cui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victorcui96/educational-slider/issues"
+  },
+  "homepage": "https://github.com/victorcui96/educational-slider#readme"
+}
