@@ -1,3 +1,67 @@
+// Variables
+$light-gray: #d3d3d3;
+$sea-shell: #fdf7f2;
+$snow: #fffafa;
+$black-green: #1a3300;
+$cool-blue: #6588a6;
+
+
 body {
-	background-color: grey;
+	background-color: $sea-shell;
+}
+
+// Override default dots
+.unslider-nav {
+	ol {
+		li {
+			&.unslider-active {
+				background: $cool-blue;
+			}
+			border-color: black;
+			border-radius: 16px;
+			margin-top: 10px;
+			width: 26px;
+			height: 26px;
+		}
+	}
+}
+
+.my-slider {
+	border: thick solid $light-gray;
+	ul {
+		li {
+			img {
+				
+				height: 550px;
+				width: 60%;
+				float: left;
+				&.please-please-me {
+					width: 55%;
+
+				}
+			}
+			.image-description {
+				background-color: black;
+				border-radius: 7px;
+				color: #fff;
+				float: right;
+				text-align: left;
+				opacity: 0.6;
+				padding: 0 15px;
+				width: 40%;
+				&.please-please-me {
+					position: relative;
+					width: 40%;
+					top: 15px;
+				    right: 2%;
+				}
+			}
+		}
+	}
+}
+
+.audio-controller {
+	&:hover {
+		cursor: pointer;
+	}
 }
