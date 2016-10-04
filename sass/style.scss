@@ -30,6 +30,7 @@ body {
 	border: thick solid $light-gray;
 	ul {
 		li {
+			position: relative;
 			img {
 				
 				height: 550px;
@@ -52,8 +53,8 @@ body {
 				&.please-please-me {
 					position: relative;
 					width: 40%;
-					top: 15px;
-				    right: 2%;
+					top: 35px;
+				    right: 3%;
 				}
 			}
 		}
@@ -61,7 +62,12 @@ body {
 }
 
 .audio-controller {
+	transition: 0.4s ease-in;
+	position: absolute;
+	right: 5px;
+	top: 1px;
 	&:hover {
 		cursor: pointer;
+		color: $cool-blue;
 	}
 }

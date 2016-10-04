@@ -32,16 +32,18 @@ $(document).ready(function() {
         // var activeSlide = $('.unslider-active');
         // var test = activeSlide.find('.image-description');
         // alert(test.children('h3').text());
+        $('.audio-element').remove();
         numAudio = 0;
-       
+
     });
 
     $('.audio-controller').on('click', function() {
         // var activeSlide = $('li').not('.unslider-active');
         // var activeSlide = $('li:not([class])');
         var audioController = $(this);
-        
+
         if (numAudio === 0) {
+            // Only create on instance of the <audio> element
             var audioElement = document.createElement('audio');
             if (audioController.hasClass('twist-and-shout')) {
                 audioElement.setAttribute('src', 'audio/twist-and-shout.mp3');
@@ -56,11 +58,14 @@ $(document).ready(function() {
         }
         console.log(audioElement);
         if (audioElement == undefined) {
+            // An <audio> element already exists
             audioElement = $('.audio-element')[0];
         }
         if (audioElement.paused) {
+            audioController.removeClass('fa-play-circle').addClass('fa-pause-circle');
             audioElement.play();
         } else {
+            audioController.removeClass('fa-pause-circle').addClass('fa-play-circle');
             audioElement.pause();
             audioElement.currentTime = 0;
         }
