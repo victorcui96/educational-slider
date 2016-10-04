@@ -1,38 +1,26 @@
 $(document).ready(function() {
+    // Unslider.js slider
     var slider = $('.my-slider').unslider({
-        // active
         animation: 'horizontal',
         arrows: {
-            prev: '<i class="fa fa-arrow-circle-left fa-4x unslider-arrow prev" aria-hidden="true"></i>',
-            next: '<i class="fa fa-arrow-circle-right fa-4x unslider-arrow next aria-hidden="true"></i>'
+            prev: '<i class="fa fa-arrow-circle-left fa-3x unslider-arrow prev" aria-hidden="true"></i>',
+            next: '<i class="fa fa-arrow-circle-right fa-3x unslider-arrow next aria-hidden="true"></i>'
         },
-        complete: function(el) {
-            if (sliderData) {
-                sliderData.items.removeClass('active');
-                $(sliderData.items[sliderData.current]).addClass('active');
-            }
-        },
-        infinite: true,
-        nav: function(index, label) {
-            //  $(this) is the current index slide
-            //  label is the current label
-            //  index is the slide index, starting at 0
-
-
-            //  Only show the number
-            return index + 1;
-        }
+       
+        infinite: true
+       
     });
-
+    // Tracks the number of <audio> elements inside the play/pause button.
+    // Should only be one at all times
     var numAudio = 0;
-    var pauseAudio = false;
 
     //  Listen to slide changes
     slider.on('unslider.change', function(event, index, slide) {
-        // var activeSlide = $('.unslider-active');
-        // var test = activeSlide.find('.image-description');
-        // alert(test.children('h3').text());
+        // remove all <audio> elements on slide change
         $('.audio-element').remove();
+        var audioController = $('.audio-controller');
+          audioController.removeClass('fa-pause-circle').addClass('fa-play-circle');
+        // used to create a new <audio> tag when user clicks on $('.audio-controller')
         numAudio = 0;
 
     });
@@ -41,14 +29,14 @@ $(document).ready(function() {
         // var activeSlide = $('li').not('.unslider-active');
         // var activeSlide = $('li:not([class])');
         var audioController = $(this);
-
+        var audioElement;
         if (numAudio === 0) {
             // Only create on instance of the <audio> element
-            var audioElement = document.createElement('audio');
+            audioElement = document.createElement('audio');
             if (audioController.hasClass('twist-and-shout')) {
                 audioElement.setAttribute('src', 'audio/twist-and-shout.mp3');
-            } else if (audioController.hasClass('misery')) {
-                audioElement.setAttribute('src', 'audio/misery.mp3');
+            } else if (audioController.hasClass('hard-days-night')) {
+                audioElement.setAttribute('src', 'audio/hard-days-night.mp3');
             }
             audioElement.className += 'audio-element';
             audioElement.setAttribute('autoplay', 'autoplay');
@@ -57,7 +45,7 @@ $(document).ready(function() {
 
         }
         console.log(audioElement);
-        if (audioElement == undefined) {
+        if (audioElement === undefined) {
             // An <audio> element already exists
             audioElement = $('.audio-element')[0];
         }
@@ -69,22 +57,7 @@ $(document).ready(function() {
             audioElement.pause();
             audioElement.currentTime = 0;
         }
-        // var activeAudioController = $('#audio-player');
-        // if (activeAudioController.hasClass('twist-and-shout')) {
-        //     console.log('twist');
-        // } else if (activeAudioController.hasClass('misery')) {
-        //     console.log('misery');
-        // }
-        // if (activeAudioController.paused) {
-        //     activeAudioController.play();
-        // } else {
-        //     activeAudioController.play();
-        //     activeAudioController.currentTime = 0;
-        // }
-        // console.log(activeSlide);
-        // var test = activeSlide.find('.image-description');
-        // alert(test.children('h3').text());
+       
     });
-    audioPlayer = document.getElementById('audio');
-
+   
 });

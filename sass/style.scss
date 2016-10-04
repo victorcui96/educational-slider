@@ -4,70 +4,95 @@ $sea-shell: #fdf7f2;
 $snow: #fffafa;
 $black-green: #1a3300;
 $cool-blue: #6588a6;
-
+// Google fonts
+@import 'https://fonts.googleapis.com/css?family=Cabin|Lobster';
+// Default styling
+html,
+body {
+    overflow-x: hidden;
+}
 
 body {
-	background-color: $sea-shell;
+    background-color: $sea-shell;
+    font-size: 16px;
+}
+
+.bold {
+    font-weight: bolder;
 }
 
 // Override default dots
 .unslider-nav {
-	ol {
-		li {
-			&.unslider-active {
-				background: $cool-blue;
-			}
-			border-color: black;
-			border-radius: 16px;
-			margin-top: 10px;
-			width: 26px;
-			height: 26px;
-		}
-	}
+    ol {
+        li {
+            &.unslider-active {
+                background: $cool-blue;
+            }
+            border-color: black;
+            border-radius: 16px;
+            margin-top: 10px;
+            width: 26px;
+            height: 26px;
+        }
+    }
 }
 
 .my-slider {
-	border: thick solid $light-gray;
-	ul {
-		li {
-			position: relative;
-			img {
-				
-				height: 550px;
-				width: 60%;
-				float: left;
-				&.please-please-me {
-					width: 55%;
+    border: thick solid $light-gray;
+    ul {
+        li {
+            position: relative;
+            img {
+                height: 550px;
+                width: 60%;
+                float: left;
+            }
+            img#please-please-me-disc {
+                width: 55%;
+            }
+            img#beatles-in-ny-image {
+            	border-radius: 5px;
 
-				}
-			}
-			.image-description {
-				background-color: black;
-				border-radius: 7px;
-				color: #fff;
-				float: right;
-				text-align: left;
-				opacity: 0.6;
-				padding: 0 15px;
-				width: 40%;
-				&.please-please-me {
-					position: relative;
-					width: 40%;
-					top: 35px;
-				    right: 3%;
-				}
-			}
-		}
-	}
+            }
+            .image-description {
+                background-color: black;
+                border-radius: 7px;
+                color: #fff;
+                float: right;
+                text-align: left;
+                opacity: 0.6;
+                padding: 0 15px;
+                position: relative;
+                top: 25px;
+                right: 3%;
+                width: 40%;
+                h3 {
+                    font-family: 'Lobster', cursive;
+                }
+                p {
+                    font-family: 'Cabin', sans-serif;
+                    padding: 6px 0;
+                }
+                &.please-please-me {
+                    width: 40%;
+                }
+                &.beatles-in-ny {
+                	right: 0;
+                	top: 0px;
+                }
+            }
+        }
+    }
 }
 
 .audio-controller {
-	transition: 0.4s ease-in;
-	position: absolute;
-	right: 5px;
-	top: 1px;
-	&:hover {
-		cursor: pointer;
-		color: $cool-blue;
-	}
+    transition: 0.4s ease-in;
+    position: absolute;
+    right: 5px;
+    top: 1px;
+    z-index: 10;
+    &:hover {
+        cursor: pointer;
+        color: $cool-blue;
+    }
 }
