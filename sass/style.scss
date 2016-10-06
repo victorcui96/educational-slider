@@ -6,6 +6,9 @@ $black-green: #1a3300;
 $cool-blue: #6588a6;
 // Google fonts
 @import 'https://fonts.googleapis.com/css?family=Cabin|Lobster';
+// Sreen sizes
+$screen-phone: 480px;
+$tablet: 768px;
 // Default styling
 html,
 body {
@@ -19,6 +22,18 @@ body {
 
 .bold {
     font-weight: bolder;
+}
+
+.panel-primary {
+    .panel-heading {
+        background-color: $cool-blue;
+        color: #fff;
+        text-align: center;
+    }
+}
+
+.sources {
+	padding-top: 30px;
 }
 
 // Override default dots
@@ -43,16 +58,32 @@ body {
         li {
             position: relative;
             img {
-                height: 550px;
-                width: 60%;
-                float: left;
+                height: 400px;
+                @media screen and (min-width: $tablet) {
+                    height: 550px;
+                    width: 60%;
+                    float: left;
+                }
             }
-            img#please-please-me-disc {
-                width: 55%;
+            @media screen and (min-width: $tablet) {
+                img#please-please-me-disc {
+                    width: 55%;
+                }
             }
             img#beatles-in-ny-image {
-            	border-radius: 5px;
-
+                border-radius: 5px;
+            }
+            @media screen and (min-width: $tablet) {
+                img#rubber-soul-image {
+                    width: 55%;
+                }
+            }
+            @media screen and (min-width: $tablet) {
+                img#revolver-image,
+                #white-album-image {
+                    width: 55%;
+                    // height: 600px;
+                }
             }
             .image-description {
                 background-color: black;
@@ -63,9 +94,11 @@ body {
                 opacity: 0.6;
                 padding: 0 15px;
                 position: relative;
-                top: 25px;
-                right: 3%;
-                width: 40%;
+                @media screen and (min-width: $tablet) {
+                    top: 25px;
+                    right: 3%;
+                    width: 40%;
+                }
                 h3 {
                     font-family: 'Lobster', cursive;
                 }
@@ -73,12 +106,34 @@ body {
                     font-family: 'Cabin', sans-serif;
                     padding: 6px 0;
                 }
-                &.please-please-me {
-                    width: 40%;
+                @media screen and (min-width: $tablet) {
+                    &.please-please-me {
+                        width: 40%;
+                    }
                 }
-                &.beatles-in-ny {
-                	right: 0;
-                	top: 0px;
+                @media screen and (min-width: $tablet) {
+                    &.beatles-in-ny {
+                        right: 0;
+                        top: 0px;
+                    }
+                }
+                @media screen and (min-width: $tablet) {
+                    &.rubber-soul {
+                        width: 45%;
+                        right: 0;
+                        top: 0px;
+                    }
+                }
+                @media screen and (min-width: $tablet) {
+                    &.revolver,
+                    &.white-album {
+                        width: 45%;
+                        right: 0;
+                        top: 0;
+                        p {
+                            padding: 6px 0;
+                        }
+                    }
                 }
             }
         }

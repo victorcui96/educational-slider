@@ -2,12 +2,13 @@ $(document).ready(function() {
     // Unslider.js slider
     var slider = $('.my-slider').unslider({
         animation: 'horizontal',
+        animateHeight: true,
         arrows: {
             prev: '<i class="fa fa-arrow-circle-left fa-3x unslider-arrow prev" aria-hidden="true"></i>',
             next: '<i class="fa fa-arrow-circle-right fa-3x unslider-arrow next aria-hidden="true"></i>'
         },
        
-        infinite: true
+        // infinite: true
        
     });
     // Tracks the number of <audio> elements inside the play/pause button.
@@ -37,6 +38,12 @@ $(document).ready(function() {
                 audioElement.setAttribute('src', 'audio/twist-and-shout.mp3');
             } else if (audioController.hasClass('hard-days-night')) {
                 audioElement.setAttribute('src', 'audio/hard-days-night.mp3');
+            } else if (audioController.hasClass('in-my-life')) {
+                audioElement.setAttribute('src','audio/in-my-life.mp3');
+            } else if (audioController.hasClass('revolver')) {
+                audioElement.setAttribute('src', 'audio/tomorrow.mp3');
+            } else if (audioController.hasClass('white-album')) {
+                audioElement.setAttribute('src','audio/happiness.mp3');
             }
             audioElement.className += 'audio-element';
             audioElement.setAttribute('autoplay', 'autoplay');
@@ -59,5 +66,7 @@ $(document).ready(function() {
         }
        
     });
+
+    
    
 });
